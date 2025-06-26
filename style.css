@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #ffffff;
+  }
+  
+  /* ヘッダー */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 2rem;
+    background-color: #666666;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  /* ロゴ画像用 */
+.logo-img {
+    height: 30px;        /* ヘッダーに対してちょうど良い高さ */
+    width: auto;
+  max-width: 100%;
+    object-fit: contain; /* 画像の比率を崩さず縮小 */
+  }
+  
+  .register-button {
+    background-color: #9bcdcd; 
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .register-button:hover {
+    background-color: #32cdcd;
+  }
+  
+  /* モーダル全体 */
+.modal {
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  
+    padding: 1rem; /* モバイル用余白 */
+    box-sizing: border-box;
+  }
+  
+  /* モーダルの中身 */
+  .modal-content {
+    background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden; /* ← 横のはみ出し防止 */
+  position: relative;
+  box-sizing: border-box;
+  }
+  
+  /* モバイル対応（念のため） */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 1rem;
+        font-size: 0.95rem;
+        overflow-y: auto;
+        overflow-x: hidden;  /* 念押しで横はみ出し防止 */
+      }
+    
+      form input,
+      form select {
+        font-size: 1rem;
+        padding: 0.4rem;
+      }
+    
+      h2 {
+        font-size: 1.2rem;
+      }
+  }
+
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* 閉じるボタン */
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+  }
+  
+  form input,
+  form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* ← 忘れがち。これが重要！ */
+  }
+  
+  form input[type="submit"] {
+    margin-top: 1.5rem;
+    background-color: #9bcdcd;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #32cdcd;
+  }
+  
+
+
+  #song-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .song-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cover {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .song-card .info {
+    margin-top: 0.5rem;
+  }

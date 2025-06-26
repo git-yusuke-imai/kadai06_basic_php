@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre DJ</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+    <body>
+
+        <header class="site-header">
+          <img src="img/logo.png" alt="ロゴ" class="logo-img"> 
+          
+          <button id="openFormBtn" class="register-button">＋ Upload</button>
+        </header>
+      
+        <!-- モーダルフォーム -->
+        <div class="modal" id="formModal">
+          <div class="modal-content">
+            <span class="close" id="closeFormBtn">&times;</span>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+              <h2>音楽登録フォーム</h2>
+      
+              <label for="artist">Artist：</label>
+              <input type="text" name="artist" id="artist" required>
+              
+              <label for="title">曲名：</label>
+              <input type="text" name="title" id="title" required>
+      
+              <label for="bpm">BPM：</label>
+              <input type="number" name="bpm" id="bpm" required>
+      
+              <label for="key">キー：</label>
+              <input type="text" name="key" id="key" placeholder="例：C#m" required>
+      
+              <label for="genre">ジャンル：</label>
+              <select name="genre" id="genre" required>
+                <option value="">選択してください</option>
+                <option value="Rock">Rock</option>
+                <option value="Metal">Metal</option>
+                <option value="Techno">Techno</option>
+                <option value="HipHop">HipHop</option>
+                <option value="EDM">EDM</option>
+                <option value="Other">Other</option>
+                
+              </select>
+              <input type="hidden" name="user_key" id="user_key">      
+              <label for="audio">音楽ファイル（MP3 or M4A）：</label>
+              <input type="file" name="audio" id="audio" accept=".mp3, .m4a, audio/mpeg, audio/mp4" required>
+
+              <label for="image">ジャケット画像：</label>
+              <input type="file" name="image" id="image" accept="image/*" required>
+      
+              <input type="submit" value="Data Upload">
+            </form>
+          </div>
+        </div>
+        <main>
+          <div id="song-container"></div>
+          
+        </main>
+        
+        <script src="script.js"></script>    
+</body>
+</html>
